@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="painel.js"></script>
+  <title>Painel</title>
+</head>
+<body>
+
+  <h2>Meus Sensores</h2>
+
+  <button onclick="abrirModal()">+ Adicionar Sensor</button>
+
+  <div id="lista-sensores">
+    <!-- sensores vão aparecer aqui -->
+  </div>
+
+  <button onclick="logout()">Sair</button>
+
+ 
+  <div id="modal-sensor" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;">
+    <div style="background:#fff; width:350px; margin:100px auto; padding:30px; border-radius:8px;">
+      <h3>Novo Sensor</h3>
+
+      <label>Apelido:</label><br>
+      <input type="text" id="sensor-apelido" style="width:100%; margin-bottom:10px;"><br>
+
+      <label>Unidade:</label><br>
+      <input type="text" id="sensor-unidade" placeholder="ex: °C, kg/m³" style="width:100%; margin-bottom:20px;"><br>
+
+      <button onclick="confirmarCadastro()">Cadastrar</button>
+      &nbsp;&nbsp;
+      <button onclick="fecharModal()">Cancelar</button>
+
+      <p id="msg-sensor" style="margin-top:10px;"></p>
+    </div>
+  </div>
+
+</body>
+</html>
